@@ -1,24 +1,36 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Dictionary from "./Dictionary";
 
 export default function App() {
   return (
     <div className="App">
       <div className="container">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link btn btn-success"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
+          <link
+            type="image/png"
+            sizes="96x96"
+            rel="icon"
+            href=".../icons8-book-96.png"
           >
-            Learn React
-          </a>
+            image
+          </link>
         </header>
+        <main>
+          <Dictionary />
+        </main>
+        <footer>
+          <a
+            target="_blank"
+            href="https://icons8.com/icon/43593/book"
+            rel="noreferrer"
+          >
+            Book
+          </a>{" "}
+          icon by{" "}
+          <a target="_blank" href="https://icons8.com" rel="noreferrer">
+            Icons8
+          </a>
+        </footer>
       </div>
     </div>
   );
