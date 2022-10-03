@@ -5,16 +5,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <header className="App-header">
-          <link
-            type="image/png"
-            sizes="96x96"
-            rel="icon"
-            href=".../icons8-book-96.png"
-          >
-            image
-          </link>
-        </header>
+        <header className="App-header"></header>
         <main>
           <Dictionary />
         </main>
