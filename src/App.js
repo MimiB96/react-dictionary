@@ -10,17 +10,7 @@ export default function App() {
           <Dictionary />
         </main>
         <footer>
-          <a
-            target="_blank"
-            href="https://icons8.com/icon/43593/book"
-            rel="noreferrer"
-          >
-            Book
-          </a>{" "}
-          icon by{" "}
-          <a target="_blank" href="https://icons8.com" rel="noreferrer">
-            Icons8
-          </a>
+         <small>Coded by Mimi Bribena</small>
         </footer>
       </div>
     </div>
