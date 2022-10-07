@@ -1,18 +1,22 @@
+import logo from "./logobook.png";
+import { Container } from "react-bootstrap";
 import "./App.css";
 import Dictionary from "./Dictionary";
 
 export default function App() {
   return (
-    <div className="App">
-      <div className="container">
-        <header className="App-header"></header>
+    <Container className="App">
+      <Container className="Container">
+        <header className="App-header">
+          <img src={logo} className="App-logo img-fluid" alt="logo" />
+        </header>
         <main>
           <Dictionary />
         </main>
         <footer>
-         <small>Coded by Mimi Bribena</small>
+          <small>Coded by Mimi Bribena</small>
         </footer>
-      </div>
-    </div>
+      </Container>
+    </Container>
   );
 }
