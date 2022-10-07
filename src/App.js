@@ -6,13 +6,17 @@ import Dictionary from "./Dictionary";
 export default function App() {
   return (
     <Container className="App">
-      <Container className="Container">
+      <Container className="Container-header">
         <header className="App-header">
           <img src={logo} className="App-logo img-fluid" alt="logo" />
         </header>
+      </Container>
+      <Container className="Container-body">
         <main>
           <Dictionary />
         </main>
+      </Container>
+      <Container className="Container-footer">
         <footer className="text-center">
           <small>Coded by Mimi Bribena</small>
         </footer>

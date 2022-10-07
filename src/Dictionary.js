@@ -33,7 +33,7 @@ export default function Dictionary() {
     return (
       <div className="Dictionary">
         <Container>
-          <form className="form" onSubmit={handleSearch}>
+          <form className="form btn btn-success" onSubmit={handleSearch}>
             <input
               type="search"
               placeholder="Search for a word"
