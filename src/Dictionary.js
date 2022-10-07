@@ -5,9 +5,10 @@ import Results from "./Results";
 
 export default function Dictionary() {
   const [keyword, setKeyword] = useState("");
-  let [results, setResults] = useState(null);
+  let [results, setResults] = useState("");
 
   function submitResponse(response) {
+    console.log(response.data[0]);
     setResults(response.data[0]);
   }
 
@@ -16,7 +17,7 @@ export default function Dictionary() {
   }
 
   function search(event) {
-    event.preventdefault();
+    event.preventDefault();
 
     let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(url).then(submitResponse);
@@ -25,7 +26,7 @@ export default function Dictionary() {
   return (
     <div className="Dictionary">
       <form onSubmit={search}>
-        <input type="Search" onChange={handleChangeKeyword} />
+        <input type="search" onChange={handleChangeKeyword} />
       </form>
       <Results results={results} />
     </div>
