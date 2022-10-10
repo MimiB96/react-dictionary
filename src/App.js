@@ -18,7 +18,14 @@ export default function App() {
       </Container>
       <Container className="Container-footer">
         <footer className="text-center">
-          <small>Coded by Mimi Bribena</small>
+          <a
+            href="https://github.com/MimiB96/react-dictionary"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open-Source Code
+          </a>{" "}
+          by Mimi Bribena
         </footer>
       </Container>
     </Container>
