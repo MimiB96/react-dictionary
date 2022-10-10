@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Dictionary.css";
 import Results from "./Results";
-import { Container } from "react-bootstrap";
 
-export default function Dictionary() {
-  const [keyword, setKeyword] = useState("");
+export default function Dictionary(props) {
+  const [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
   let [loaded, setLoaded] = useState(false);
 
@@ -32,8 +31,8 @@ export default function Dictionary() {
   if (loaded) {
     return (
       <div className="Dictionary">
-        <Container>
-          <form className="form btn btn-success" onSubmit={handleSearch}>
+        <section>
+          <form className="form" onSubmit={handleSearch}>
             <input
               type="search"
               placeholder="Search for a word"
@@ -41,10 +40,9 @@ export default function Dictionary() {
               onChange={handleChangeKeyword}
             />
           </form>
-        </Container>
-        <Container>
-          <Results results={results} />
-        </Container>
+        </section>
+
+        <Results results={results} />
       </div>
     );
   } else {

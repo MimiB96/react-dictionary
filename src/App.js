@@ -13,7 +13,7 @@ export default function App() {
       </Container>
       <Container className="Container-body">
         <main>
-          <Dictionary />
+          <Dictionary defaultKeyword="Dictionary" />
         </main>
       </Container>
       <Container className="Container-footer">
