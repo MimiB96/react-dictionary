@@ -2,14 +2,19 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Dictionary.css";
 import Results from "./Results";
+import Photos from "./Photos";
 
 export default function Dictionary(props) {
   const [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
   let [loaded, setLoaded] = useState(false);
+  let [photos, setPhotos] = useState([]);
 
-  function submitResponse(response) {
+  function handleDictionary(response) {
     setResults(response.data[0]);
+  }
+  function handleImage(response) {
+    setPhotos(response.data.photos);
   }
   function Load() {
     setLoaded(true);
@@ -21,8 +26,15 @@ export default function Dictionary(props) {
   }
 
   function search() {
-    let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-    axios.get(url).then(submitResponse);
+    const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+    axios.get(url).then(handleDictionary);
+
+    const pexelsApiKey =
+      "563492ad6f91700001000001004ec349788349a081c77866f7b8a4e1";
+    const pexelsUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=4`;
+    axios
+      .get(pexelsUrl, { headers: { Authorization: `Bearer ${pexelsApiKey}` } })
+      .then(handleImage);
   }
   function handleSearch(event) {
     event.preventDefault();
@@ -32,18 +44,20 @@ export default function Dictionary(props) {
     return (
       <div className="Dictionary">
         <section>
-          <h2>Search For A Word...</h2>
+          <label>Search For A Word...</label>
           <form className="form" onSubmit={handleSearch}>
             <input
               type="search"
               defaultValue={props.defaultKeyword}
               autoFocus={true}
               onChange={handleChangeKeyword}
+              className="form-control search-input"
             />
           </form>
         </section>
 
         <Results results={results} />
+        <Photos photos={photos} />
       </div>
     );
   } else {

@@ -1,18 +1,23 @@
+.App .Container {
+  padding: 60px 0 100px;
+  max-width: 960px;
+  margin: 0 auto;
+}
 .App .Container-header {
   margin: 30px 0;
-  text-align: center;
 }
 .App-logo {
   max-width: 200px;
   display: block;
-  margin: 0 auto;
+  margin: 30 auto;
+  padding-left: 600px;
 }
 .App footer {
   text-align: center;
-  margin: 30px 0;
+  margin-top: 20px;
   background-color: brown;
   color: white;
-  font-size: 16px;
+  font-size: 13px;
 }
 .App footer a {
   text-decoration: underline;

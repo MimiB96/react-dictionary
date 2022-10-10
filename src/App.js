@@ -8,7 +8,11 @@ export default function App() {
     <Container className="App">
       <Container className="Container-header">
         <header className="App-header">
-          <img src={logo} className="App-logo img-fluid" alt="logo" />
+          <img
+            src={logo}
+            className="App-logo img-fluid text-center"
+            alt="logo"
+          />
         </header>
       </Container>
       <Container className="Container-body">

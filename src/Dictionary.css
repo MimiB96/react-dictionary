@@ -25,7 +25,13 @@
   text-transform: capitalize;
 }
 .Phonetic {
-  height: 60px;
+  margin: 20px 0 0;
+}
+.Phonetic h2 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  display: inline;
 }
 .Phonetic a {
   border: 1px solid brown;
@@ -67,4 +73,8 @@
 .Synonym li {
   display: inline-flex;
   padding-right: 10px;
+}
+.Photos img {
+  border-radius: 6px;
+  margin: 10px 0;
 }
